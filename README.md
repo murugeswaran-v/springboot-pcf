@@ -2,13 +2,19 @@
 Spring boot Rest application to perform CURD operation. The application is deployed in Cloud foundry
 
 Endpoint Information:
+
 Base URL: https://springboot-demo.cfapps.io/api
 
 Resource description:
-POST    /employees 
+
+POST    /employees
+
 GET     /employees
+
 GET     /employees/{employee_id}
+
 PUT     /employees
+
 DELETE  /employees/{employee_id}
 
 
@@ -16,6 +22,7 @@ Sample Call:
 
 • POST https://springboot-demo.cfapps.io/api/employees
 Request Body: 
+
 {
   "firstName": "Murugeswaran",
   "lastName": "Vellaiappan",
@@ -23,6 +30,7 @@ Request Body:
 }
 
 Response Body:
+
 {
     "id": 1,
     "firstName": "Murugeswaran",
@@ -31,6 +39,7 @@ Response Body:
 }
 
 • GET https://springboot-demo.cfapps.io/api/employees
+
 Request Body: None
 Response Body:
 [
