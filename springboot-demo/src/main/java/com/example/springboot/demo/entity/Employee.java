@@ -15,7 +15,6 @@ import org.hibernate.annotations.DynamicUpdate;
  *
  */
 @Entity
-@DynamicUpdate
 public class Employee {
 	// Employee ID auto generated
 	@Id
@@ -36,7 +35,7 @@ public class Employee {
 	//last name of employee
 	@Column(name = "email")
 	@NotEmpty(message = "Email must not be empty")
-    @Email(message = "Email must be a valid email address")
+	@Email(message = "Email must be a valid email address")
 	private String email;
 	
 	public String getEmail() {
