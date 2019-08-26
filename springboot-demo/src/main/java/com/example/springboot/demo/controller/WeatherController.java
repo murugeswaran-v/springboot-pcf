@@ -24,10 +24,9 @@ public class WeatherController {
     
     @GetMapping("/weather/{city}")
 	public WeatherResponse getWeatherByCity(@PathVariable String city) {
-    	WeatherReporter weatherReporter = new WeatherReporter();
-    	WeatherResponse response = weatherReporter.processWeatherReportByCity(weatherURL, forecastURL, city);
-    	return response;
-    	
+        WeatherReporter weatherReporter = new WeatherReporter();
+        WeatherResponse response = weatherReporter.processWeatherReportByCity(weatherURL, forecastURL, city);
+        return response;
 	}
 
 }
