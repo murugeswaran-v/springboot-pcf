@@ -15,18 +15,18 @@ import com.example.springboot.demo.entity.WeatherResponse;
 @RestController
 @RequestMapping("/api")
 public class WeatherController {
-	
-	@Value("${custom.weather.url}")
-	private String weatherURL;
-	
-	@Value("${custom.forcast.url}")
-	private String forecastURL;
+    
+    @Value("${custom.weather.url}")
+    private String weatherURL;
+    
+    @Value("${custom.forcast.url}")
+    private String forecastURL;
     
     @GetMapping("/weather/{city}")
-	public WeatherResponse getWeatherByCity(@PathVariable String city) {
+    public WeatherResponse getWeatherByCity(@PathVariable String city) {
         WeatherReporter weatherReporter = new WeatherReporter();
         WeatherResponse response = weatherReporter.processWeatherReportByCity(weatherURL, forecastURL, city);
         return response;
-	}
+    }
 
 }
