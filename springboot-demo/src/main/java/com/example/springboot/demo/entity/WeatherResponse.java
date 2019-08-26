@@ -1,5 +1,6 @@
 package com.example.springboot.demo.entity;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,369 +10,145 @@ import java.util.List;
  */
 public class WeatherResponse {
 	
-	private Coord coord;
-	private List<Weather> weather= new ArrayList<Weather>();
-	private String base;
-	private Main main;
-	private Integer visibility;
-	private Wind wind;
-	private Clouds clouds;
-	private Long dt;
-	private Sys sys;
-	private Integer timezone;
-	private Long id;
-	private String name;
-	private String cod;
+	private String city_name;
+	private Long timezone;
+	private Double curr_temp;
+	private Long humidity;
+	private Double curr_temp_min;
+	private Double curr_temp_max;
+	
+	private List<Forecast> forecast= new ArrayList<Forecast>();
 	
 	public WeatherResponse() {
 		
 	}
-
-	public Coord getCoord() {
-		return coord;
+	
+	public String getCity_name() {
+		return city_name;
 	}
 
-	public void setCoord(Coord coord) {
-		this.coord = coord;
+	public void setCity_name(String city_name) {
+		this.city_name = city_name;
 	}
 
-	public List<Weather> getWeather() {
-		return weather;
-	}
-
-	public void setWeather(List<Weather> weather) {
-		this.weather = weather;
-	}
-
-	public String getBase() {
-		return base;
-	}
-
-	public void setBase(String base) {
-		this.base = base;
-	}
-
-	public Main getMain() {
-		return main;
-	}
-
-	public void setMain(Main main) {
-		this.main = main;
-	}
-
-	public Integer getVisibility() {
-		return visibility;
-	}
-
-	public void setVisibility(Integer visibility) {
-		this.visibility = visibility;
-	}
-
-	public Wind getWind() {
-		return wind;
-	}
-
-	public void setWind(Wind wind) {
-		this.wind = wind;
-	}
-
-	public Clouds getClouds() {
-		return clouds;
-	}
-
-	public void setClouds(Clouds clouds) {
-		this.clouds = clouds;
-	}
-
-	public Long getDt() {
-		return dt;
-	}
-
-	public void setDt(Long dt) {
-		this.dt = dt;
-	}
-
-	public Sys getSys() {
-		return sys;
-	}
-
-	public void setSys(Sys sys) {
-		this.sys = sys;
-	}
-
-	public Integer getTimezone() {
+	public Long getTimezone() {
 		return timezone;
 	}
 
-	public void setTimezone(Integer timezone) {
+	public void setTimezone(Long timezone) {
 		this.timezone = timezone;
 	}
 
-	public Long getId() {
-		return id;
+	public Double getCurr_temp() {
+		return curr_temp;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setCurr_temp(Double curr_temp) {
+		this.curr_temp = curr_temp;
 	}
 
-	public String getName() {
-		return name;
+	public Long getHumidity() {
+		return humidity;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setHumidity(Long humidity) {
+		this.humidity = humidity;
 	}
 
-	public String getCod() {
-		return cod;
+	public Double getCurr_temp_min() {
+		return curr_temp_min;
 	}
 
-	public void setCod(String cod) {
-		this.cod = cod;
+	public void setCurr_temp_min(Double curr_temp_min) {
+		this.curr_temp_min = curr_temp_min;
 	}
 
+	public Double getCurr_temp_max() {
+		return curr_temp_max;
+	}
 
-	// Coord Entity
-	public static class Coord{
+	public void setCurr_temp_max(Double curr_temp_max) {
+		this.curr_temp_max = curr_temp_max;
+	}
+
+	public List<Forecast> getForecast() {
+		return forecast;
+	}
+
+	public void setForecast(List<Forecast> forecast) {
+		this.forecast = forecast;
+	}
+
+	// Forecast Entity
+	public class Forecast{
+		private String date_time;
+		private Double forecast_temp;
+		private Long forecast_humidity;
+		private Double forecast_temp_min;
+		private Double forecast_temp_max;
 		
-		private Double lon;
-		private Double lat;
+		public Forecast(){
+			
+		}		
 		
-		public Double getLon() {
-			return lon;
-		}
-		public void setLon(Double lon) {
-			this.lon = lon;
-		}
-		public Double getLat() {
-			return lat;
-		}
-		public void setLat(Double lat) {
-			this.lat = lat;
-		}
-		
-		@Override
-		public String toString() {
-			return "Coord [lon=" + lon + ", lat=" + lat + "]";
-		}
-		
-	}
-	
-	//Weather Entity
-	public static class Weather {
-		private Integer id;
-		private String main;
-		private String description;
-		private String icon;
-
-		public int getId() {
-			return id;
+		public Forecast(String date_time, Double forecast_temp, Long forecast_humidity, Double forecast_temp_min,
+				Double forecast_temp_max) {
+			this.date_time = date_time;
+			this.forecast_temp = forecast_temp;
+			this.forecast_humidity = forecast_humidity;
+			this.forecast_temp_min = forecast_temp_min;
+			this.forecast_temp_max = forecast_temp_max;
 		}
 
-		public void setId(Integer id) {
-			this.id = id;
+
+
+		public String getDate_time() {
+			return date_time;
 		}
 
-		public String getMain() {
-			return main;
+		public void setDate_time(String date_time) {
+			this.date_time = date_time;
 		}
 
-		public void setMain(String main) {
-			this.main = main;
+		public Double getForecast_temp() {
+			return forecast_temp;
 		}
 
-		public String getDescription() {
-			return description;
+		public void setForecast_temp(Double forecast_temp) {
+			this.forecast_temp = forecast_temp;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public Long getForecast_humidity() {
+			return forecast_humidity;
 		}
 
-		public String getIcon() {
-			return icon;
+		public void setForecast_humidity(Long forecast_humidity) {
+			this.forecast_humidity = forecast_humidity;
 		}
 
-		public void setIcon(String icon) {
-			this.icon = icon;
+		public Double getForecast_temp_min() {
+			return forecast_temp_min;
 		}
 
-		@Override
-		public String toString() {
-			return "Weather [id=" + id + ", main=" + main + ", description=" + description + ", icon=" + icon + "]";
-		}
-		
-	}
-	
-	//main entity
-	public static class Main{
-		private Double temp;
-		private Long pressure;
-		private Integer humidity;
-		private Double temp_min;
-		private Double temp_max;
-
-		public Double getTemp() {
-			return temp;
+		public void setForecast_temp_min(Double forecast_temp_min) {
+			this.forecast_temp_min = forecast_temp_min;
 		}
 
-		public void setTemp(Double temp) {
-			this.temp = temp;
+		public Double getForecast_temp_max() {
+			return forecast_temp_max;
 		}
 
-		public long getPressure() {
-			return pressure;
-		}
-
-		public void setPressure(Long pressure) {
-			this.pressure = pressure;
-		}
-
-		public int getHumidity() {
-			return humidity;
-		}
-
-		public void setHumidity(Integer humidity) {
-			this.humidity = humidity;
-		}
-
-		public Double getTemp_min() {
-			return temp_min;
-		}
-
-		public void setTemp_min(Double temp_min) {
-			this.temp_min = temp_min;
-		}
-
-		public Double getTemp_max() {
-			return temp_max;
-		}
-
-		public void setTemp_max(Double temp_max) {
-			this.temp_max = temp_max;
+		public void setForecast_temp_max(Double forecast_temp_max) {
+			this.forecast_temp_max = forecast_temp_max;
 		}
 
 		@Override
 		public String toString() {
-			return "Main [temp=" + temp + ", pressure=" + pressure + ", humidity=" + humidity + ", temp_min=" + temp_min
-					+ ", temp_max=" + temp_max + "]";
+			return "Forecast [date_time=" + date_time + ", forecast_temp=" + forecast_temp + ", forecast_humidity="
+					+ forecast_humidity + ", forecast_temp_min=" + forecast_temp_min + ", forecast_temp_max="
+					+ forecast_temp_max + "]";
 		}
 		
-		
-	}
-	
-	//wind entity
-	public static class Wind{
-		private Double speed;
-		private Integer deg;
-		
-		public double getSpeed() {
-			return speed;
-		}
-
-		public void setSpeed(Double speed) {
-			this.speed = speed;
-		}
-
-		public int getDeg() {
-			return deg;
-		}
-
-		public void setDeg(Integer deg) {
-			this.deg = deg;
-		}
-
-		@Override
-		public String toString() {
-			return "Wind [speed=" + speed + ", deg=" + deg + "]";
-		}
-		
-		
-	}
-	
-	//clouds entity
-	public static class Clouds{
-		private Integer all;
-
-
-		public Integer getAll() {
-			return all;
-		}
-
-		public void setAll(Integer all) {
-			this.all = all;
-		}
-
-		@Override
-		public String toString() {
-			return "Clouds [all=" + all + "]";
-		}
-		
-	}
-	
-	//sys entity
-	public static class Sys{
-		private Integer type;
-		private Integer id;
-		private Double message;
-		private String country;
-		private Long sunrise;
-		private Long sunset;
-
-		public Integer getType() {
-			return type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
-		}
-
-		public Integer getId() {
-			return id;
-		}
-
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public Double getMessage() {
-			return message;
-		}
-
-		public void setMessage(Double message) {
-			this.message = message;
-		}
-
-		public String getCountry() {
-			return country;
-		}
-
-		public void setCountry(String country) {
-			this.country = country;
-		}
-
-		public Long getSunrise() {
-			return sunrise;
-		}
-
-		public void setSunrise(Long sunrise) {
-			this.sunrise = sunrise;
-		}
-
-		public Long getSunset() {
-			return sunset;
-		}
-
-		public void setSunset(Long sunset) {
-			this.sunset = sunset;
-		}
-
-		@Override
-		public String toString() {
-			return "Sys [type=" + type + ", id=" + id + ", message=" + message + ", country=" + country + ", sunrise="
-					+ sunrise + ", sunset=" + sunset + "]";
-		}
 		
 	}
 	
